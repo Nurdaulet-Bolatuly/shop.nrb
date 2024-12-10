@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет магазин</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+       header, nav, main, aside, footer {
+            padding: 20px;
+        }
+        header {
+            background-color: lavender;
+            color: black;
+            text-align: center;
+        }
+
+         header img {
+            margin-left: 15px;
+               }
+        nav {
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+ .navbar {
+  display: flex;
+  justify-content: space-between; /
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px; 
+}
+
+.navbar .menu-btn {
+  margin-right: auto;
+}
+.nav-button a {
+  text-decoration: none;
+  color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: darkslategrey;
+  padding: 5px 10px;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+        .product {
+  opacity: 0.5; 
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.product:hover {
+  opacity: 1; 
+}
+.product {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+}
+
+.product:hover {
+  opacity: 1; 
+  transform: scale(1.05); 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.menu-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px;
+}
+        
+
+
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; 
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+.offcanvas-menu.open {
+  transform: translateX(300px);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.offcanvas-menu h2 {
+  margin: 20px;
+}
+
+.offcanvas-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.offcanvas-menu ul li {
+  margin: 10px 5px;
+}
+
+.offcanvas-menu ul li a {
+  text-decoration: none;
+  color: #007bff;
+    text-align: left;
+  
+}
+
+.offcanvas-menu ul li a:hover {
+  text-decoration: underline;
+}
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+.offcanvas-menu.open {
+  transform: translateX(-300px);
+}
+.search-section {
+  margin-top: 10px;
+}
+
+.search-section input {
+  width: 70%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-section button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  background-color: #0056b3;
+}
+         main {
+            display: flex;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 80%;
+        }
+
+        
+       article {
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        article h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        article p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        aside {
+            flex: 1;
+            background-color: #ecf0f1;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        aside h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        aside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        aside li {
+            margin-bottom: 10px;
+        }
+
+        aside li a {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        aside li a:hover {
+            color: #2980b9;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        color: #2980b9;
+        }
+     .share-container {
+    position: relative;
+    display: inline-block;
+}
+
+.share-button {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.share-button:hover {
+    transform: scale(1.1);
+}
+
+.share-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.share-menu {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.share-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Сілтемелер стилі */
+.share-menu .share-link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.share-menu .share-link:hover {
+    background-color: #f0f0f0; 
+}
+        footer {
+            background-color: dodgerblue;
+            text-align: center;
+            padding: 10px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+  
+@media (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  aside {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-center {
+    gap: 10px;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="lab4.2.html" ><img Align="left" src="nur.png" alt="Сайт логотипі" width="80" height="80"></a>
+        <h1 ALIGN="CENTER"><b>NRB shop</b> </h1>
+    </header>
+
+    
+      <nav class="navbar">
+           
+    <button id="menuButton" class="menu-btn">☰ Меню</button>
+
+<div id="offcanvasMenu" class="offcanvas-menu">
+  <button id="closeButton" class="close-btn">✖</button>
+  <h2>Меню</h2>
+  <ul>
+    <li><a href="coj3.html">Басты бет</a></li>
+    <li><a href="coj3.html">Қызметтер</a></li>
+    <li>
+      <a href="#">Ақпарат</a>
+      <div class="search-section">
+  <input type="text" id="searchInput" placeholder="Іздеу...">
+  <button id="searchButton">Іздеу</button>
+</div>
+      </li>
+<ul id="searchResults"></ul>
+    </ul>
+
+</div>
+          <script src="script.js"></script>
+
+
+ 
+    <div class="nav-center">
+      <a href="coj3.html" class="nav-link active">Home</a>
+      <a href="lab13.html" class="nav-link">Link</a>
+      <a href="cojjj.html" class="nav-link disabled">About</a>
+      <div class="dropdown">
+        <button class="dropbtn">Товары</button>
+        <div class="dropdown-content">
+          <a href="lux.html">Люкс</a>
+          <a href="cojjj.html">Скидки%</a>
+        </div>
+      </div>
+        <button class="nav-button"><a href="lab9.tap7.html">Регестрация</a></button>
+    </div>
+           <script src="script.js"></script>
+  </nav>
+  
+   
+
+    
+    
+    <main>
+         
+    <div>
+    <h2 align="center">Біз туралы</h2>
+    <p></p>
+     <p>NRB shop — сапалы тауарлар мен сенімді қызмет көрсетуді мақсат ететін онлайн дүкен. Біз тұтынушыларға заманауи трендтерге сай өнімдерді ұсынып, әрбір сатып алушының қажеттіліктерін ескереміз.</p>
+     <p>Дүкенімізде сіз тұрмыстық заттардан бастап, киім-кешекке дейін кең ассортимент таба аласыз. Біздің басты міндетіміз – клиенттерімізге ыңғайлы сатып алу процесін ұсыну және әрқашан</p> 
+     <p> жоғары сапалы өнімдермен қамтамасыз ету. NRB shop – сіздің сенімді таңдауыңыз!
+    </p>
+    </div>
+         <aside>
+                    
+        <h2>Қосымша ақпараттар</h2>
+         <ul>
+             <li> <a href="https://bio.site/f943iY">Турциядан тауар</a></li>
+             <li><a href="https://satu.kz/kz/Interesnye-tovary-iz-korei.html?srsltid=AfmBOortwFzJYzhsrIgqHz7rEVVD0u1RiRmaOnhlCX4znewFAVEDkqZ-">Балидан тауарлар</a></li>
+             <li><a href="https://satu.kz/kz/shalkar/Tovar.html?srsltid=AfmBOoqo0pudzAXSkYSzU8qv0eVSjWRx1kSR9aeZ9L9qbr8atJhOtDIG">Кореядан тауарлар</a></li>
+             </ul>
+     <div class="share-container">
+    <button class="share-button">
+        <img src="iconn.webp" alt="Share" />
+    </button>
+    <div class="share-menu">
+        <a href="https://www.facebook.com" class="share-link" data-url="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.twitter.com" class="share-link" data-url="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com" class="share-link" data-url="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.google.com" class="share-link" data-url="https://www.google.com" target="_blank">Google+</a>
+    </div>
+</div>
+<script src="script.js"></script>
+
+    </aside>
+    </main>
+    <main>
+        <section>
+    <main>
+      <section class="products">
+        <article>
+        <div class="product">
+            <img src="rrr.jpeg" alt="Тауар 1">
+            <h3>Дженси</h3>
+            <p class="price">Бағасы: 5000 тг</p>
+            <button><a href="cojjj.html" style="color: black; text-decoration: none;"> Сатып алу</a></button>
+        </div>
+          </article>
+        </section>
+          </main>
+        <main>
+            <article>
+        <div class="product">
+            <img src="fut.jpeg" alt="Тауар 2">
+            <h3>Футболки</h3>
+            <p class="price-old">Бағасы: 7000 тг</p>
+            <p class="price">Жаңа бағасы: 5000 тг</p>
+            <div class="discount">Скидка 28%</div>
+            <button><a href="cojjj.html" style="color: black; text-decoration: none;"> Сатып алу</a></button>
+        </div>
+                </article>
+        </main>
+      <main>
+          <article>
+        <div class="product">
+            <img src="trt.jpeg" alt="Тауар 3">
+            <h3>Жен худи</h3>
+            <p class="price">Бағасы: 6000 тг</p>
+            <button><a href="cojjj.html" style="color: black; text-decoration: none;"> Сатып алу</a></button>
+        </div>
+              </article>
+       </main>
+    <main>
+    <article>
+        <div class="product">
+            <img src="reb,jpeg.jpeg" alt="Тауар 4">
+            <h3>Муж худи</h3>
+            <p class="price-old">Бағасы: 8000 тг</p>
+            <p class="price">Жаңа бағасы: 6000 тг</p>
+            <div class="discount">Скидка 25%</div>
+            <button><a href="cojjj.html" style="color: black; text-decoration: none;"> Сатып алу</a></button>
+        </div>
+      </article>
+        </main>
+    <main>
+        <article>
+        <div class="product">
+            <img src="talc.webp" alt="Тауар 5">
+            <h3>Толстовки</h3>
+            <p class="price">Бағасы: 9000 тг</p>
+            <button><a href="cojjj.html" style="color: black; text-decoration: none;"> Сатып алу</a></button>
+        </div>
+            </article>
+       </main>
+    <main>
+        <article>
+        <div class="product">
+            <img src="shoppinggg.webp" alt="Тауар 6">
+            <h3>Спортивки</h3>
+            <p class="price">Бағасы: 10000 тг</p>
+            <button><a href="cojjj.html" style="color: black; text-decoration: none;"> Сатып алу</a></button>
+        </div>
+            </article>
+    </main>
+    </section>
+    </main>
+    <footer>
+        <p>Байланыс ақпарат: nurdaulet@gmail.com | +7 (776) 826-89-22</p>
+        <p>&copy; 2024 NRB shop</p>
+    </footer>
+     <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const shareButton = document.querySelector(".share-button");
+    const shareMenu = document.querySelector(".share-menu"); 
+
+    shareButton.addEventListener("click", () => {
+        shareMenu.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!shareButton.contains(event.target) && !shareMenu.contains(event.target)) {
+            shareMenu.classList.remove("active");
+        }
+    });
+
+    const shareLinks = document.querySelectorAll(".share-link");
+    shareLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const url = link.getAttribute("data-url");
+
+            const width = 600;
+            const height = 400;
+            const left = (window.innerWidth - width) / 2;
+            const top = (window.innerHeight - height) / 2;
+
+            window.open(
+                url,
+                "_blank",
+                `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+            );
+        });
+    });
+});
+    </script>
+<script>document.querySelectorAll('.share-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+      
+        window.open(this.href, '_blank');
+        event.preventDefault();
+    });
+});</script>
+    <script>
+const menuButton = document.getElementById('menuButton');
+const closeButton = document.getElementById('closeButton');
+const offcanvasMenu = document.getElementById('offcanvasMenu');
+
+menuButton.addEventListener('click', () => {
+  offcanvasMenu.style.transform = "translateX(300px)"; 
+});
+
+closeButton.addEventListener('click', () => {
+  offcanvasMenu.style.transform = "translateX(0)";
+});
+
+document.addEventListener('click', (event) => {
+  if (!offcanvasMenu.contains(event.target) && event.target !== menuButton) {
+    offcanvasMenu.style.transform = "translateX(0)"; 
+  }
+});
+
+
+    </script>
+    
+    <script>
+const searchButton = document.getElementById('searchButton');
+
+searchButton.addEventListener('click', () => {
+  const searchInput = document.getElementById('searchInput').value;
+  alert(`Сіз "${searchInput}" іздеп жатырсыз!`);
+});
+
+
+
+
+    </script>
+
+</body>
+</html>
+
+
